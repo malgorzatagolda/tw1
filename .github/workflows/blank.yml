@@ -32,10 +32,10 @@ jobs:
         run: |
           newman run tw1.json \
           -e env_secret.json \
+          --env-var "username=${{ secrets.POSTMAN_USER }}" \
+          --env-var "password=${{ secrets.POSTMAN_PASSWORD }}" \
             --reporters cli,htmlextra \
             --reporter-htmlextra-export reports/results.html
-            --env-var "username=${{ secrets.POSTMAN_USER }}" \
-            --env-var "password=${{ secrets.POSTMAN_PASSWORD }}" \
 
 
       - name: Upload HTML report artifact
