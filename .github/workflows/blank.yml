@@ -30,8 +30,8 @@ jobs:
       - name: Run Postman tests and export HTML report
   
         run: |
-          newman run tada1.json \
-          -e env.json \
+          newman run tw1.json \
+          -e env_secret.json.json \
             --reporters cli,htmlextra \
             --reporter-htmlextra-export reports/results.html
 
