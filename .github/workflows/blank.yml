@@ -34,6 +34,9 @@ jobs:
           -e env_secret.json \
             --reporters cli,htmlextra \
             --reporter-htmlextra-export reports/results.html
+            --env-var "username=${{ secrets.POSTMAN_USER }}" \
+            --env-var "password=${{ secrets.POSTMAN_PASSWORD }}" \
+
 
       - name: Upload HTML report artifact
         uses: actions/upload-artifact@v4
